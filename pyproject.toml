@@ -1,0 +1,28 @@
+[project]
+name = "openai-llm-invoke"
+version = "0.1.0"
+description = "OpenAI 兼容接口的模型调用"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.78.1",
+    "pydantic>=2.11.4",
+    "zhipuai>=2.1.5.20250421",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "ruff>=0.11.10",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.pytest.ini_options]
+addopts = ["-vv", "--capture=no", "--show-capture=no", "--showlocals", "--tb=long"]
+asyncio_mode = "auto"
+log_cli = true
+log_cli_level = "INFO"
+asyncio_default_fixture_loop_scope = "function"
